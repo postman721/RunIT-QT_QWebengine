@@ -2,7 +2,7 @@
 RunIT Browser (QWebEngine version)
 
 
-November 15th 2020:
+<b>November 15th 2020:</b>
 
 RunIT Browser(PyQT5) has advanced to 0.7 beta1 version.
 
