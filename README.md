@@ -13,7 +13,7 @@ Notable improvements/changes:
 
 - Tabbed browsing: Double-click existing tab to get a new empty tab.
 - More integrations to double-click menu. See about (i) for more information.
-- QWebviewEngine capability integrations continue: code becomes a bit cleaner and more functional.
+- QWebEngine capability integrations continue: code becomes a bit cleaner and more functional.
 - UI is changed to become more clearer.
 
 TODO in upcoming releases: 
