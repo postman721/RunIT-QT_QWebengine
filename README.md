@@ -2,7 +2,26 @@
 RunIT Browser (QWebEngine version)
 
 
-RunIT Browser (QT-version) has received an upgrade. The browser now uses QWebEngine in providing the browser experience. 0.7 version adds tabs support for the browser.Since the transition is hardly ever a smooth thing to do, Open in a New Window and Web Inspector are currently dropped as features. In the future, I seek to bring these features back. The overall functionality is improved and the browser is acting a lot more stable than it previously did. Without further ado, here is a screenshot
+November 15th 2020:
+
+RunIT Browser(PyQT5) has advanced to 0.7 beta1 version.
+
+![runit](https://user-images.githubusercontent.com/29865797/99185976-d0941080-2755-11eb-906a-7dcc022a0533.jpg)
+
+
+Notable improvements/changes:
+
+- Tabbed browsing: Double-click existing tab to get a new empty tab.
+- More integrations to double-click menu. See about (i) for more information.
+- QWebviewEngine capability integrations continue: code becomes a bit cleaner and more functional.
+- UI is changed to become more clearer.
+
+TODO in upcoming releases: 
+	- Possibly integate label support as seen on previous releases.
+	- Integrate url changing capabilities to other tabs than main. Currently urls do not change on other tabs when tab is changed away from the initial tab.
+	- Enhance and integrate more QWebpage right-click functionalities.
+
+	
 
 Dependencies:
 
@@ -10,8 +29,6 @@ Something like below, should be enough.
 
 python-pyqt5.qtwebengine python-pyqt5 ca-certificates
 
-
-![runitnew](https://user-images.githubusercontent.com/29865797/39454192-7161880e-4cc9-11e8-839d-e1c19880f922.jpg)
 
 
 
