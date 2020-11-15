@@ -18,9 +18,10 @@ Notable improvements/changes:
 
 TODO in upcoming releases: 
 
-	- Possibly integate label support as seen on previous releases.
-	- Integrate url changing capabilities to other tabs than main. Currently urls do not change on other tabs when tab is changed away from the initial tab.
-	- Enhance and integrate more QWebpage right-click functionalities.
+- Possibly integate label support as seen on previous releases.
+- Integrate url changing capabilities to other tabs than main. 
+  Currently urls do not change on other tabs when tab is changed away from the initial tab.
+- Enhance and integrate more QWebpage right-click functionalities.
 
 	
 
