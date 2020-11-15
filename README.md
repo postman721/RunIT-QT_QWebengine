@@ -12,6 +12,7 @@ RunIT Browser(PyQT5) has advanced to 0.7 beta1 version.
 Notable improvements/changes:
 
 - Tabbed browsing: Double-click existing tab to get a new empty tab.
+- Right-click: Open link in a new tab functionality is now working.
 - More integrations to double-click menu. See about (i) for more information.
 - QWebEngine capability integrations continue: code becomes a bit cleaner and more functional.
 - UI is changed to become more clearer.
