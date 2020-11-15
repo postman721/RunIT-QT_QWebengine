@@ -40,4 +40,3 @@ Run the browser: python run.py
 
 
 _______________________________________
-Original post is at: https://www.techtimejourney.net/runit-browser-upgrades-to-version-0-7/
