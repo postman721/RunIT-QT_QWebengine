@@ -7,7 +7,6 @@ from PyQt5.QtPrintSupport import *
 import os, sys, subprocess
 from subprocess import Popen  
 from icons import *
-
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -29,14 +28,14 @@ class TabWidget(QMainWindow):
         view.load(url)
 #Window settings
         self.resize(800, 600)        
-        self.setWindowTitle("RunIT Browser") 
+        self.setWindowTitle("RunIT Browser")
 #Tabwidget creation      
         self.tabs=QTabWidget()
         self.tabs.addTab(view, "Tab")                                   
 #Navigation bar        
         self.urlbar = QLineEdit()
         self.urlbar.setStyleSheet("QLineEdit{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
-        "QLineEdit:hover{background-color:#5c5c5c;}") 
+        "QLineEdit:hover{background-color:#4d4a4a;}") 
         self.urlbar.setObjectName(_fromUtf8("lineEdit"))
         self.urlbar.setPlaceholderText("Type an address")
         self.urlbar.returnPressed.connect(self.navigation)
@@ -71,7 +70,11 @@ class TabWidget(QMainWindow):
 #First page
         self.url ="https://www.startpage.com/"
         self.tabs.currentWidget().load(QUrl(self.url)) 
-        self.urlbar.setText(str(self.url)) 
+        self.urlbar.setText(str(self.url))
+        currentIndex=self.tabs.currentIndex()
+        currentWidget=self.tabs.currentWidget()
+        print(currentIndex)
+        self.tabs.setTabText(currentIndex, str(currentIndex)) 
                
 ############################
 #Rest of the content begins
@@ -221,14 +224,12 @@ class TabWidget(QMainWindow):
 ####Functions begin
 #####################
     def title(self):
-        title=self.tabs.currentWidget().page().title()
-        self.status.showMessage(title)
+        pass
         
     def url_update(self):
         qurl = self.tabs.currentWidget().url().toString()
         self.urlbar.setText(str(qurl))       
-        self.title()
-			
+	
 #Remove tabs unless only 1 available.
     def close_tab(self, number_of_tabs):   
         if self.tabs.count() < 2:  
@@ -244,7 +245,11 @@ class TabWidget(QMainWindow):
         print(aq)	
         self.urlbar.setText(aq)
         self.tabs.currentWidget().load(QUrl(aq))
-        qurl = self.tabs.currentWidget().url()           
+        qurl = self.tabs.currentWidget().url()
+        currentIndex=self.tabs.currentIndex()
+        currentWidget=self.tabs.currentWidget()
+        self.status.showMessage(str("Last loaded: " + aq + "   On tab: " + str(currentIndex)))
+           
 ############################################
 #When double-clicking tab open a new empty tab
 #with these two methods.
@@ -252,6 +257,10 @@ class TabWidget(QMainWindow):
         browser = QWebEngineView()   
         ix = self.tabs.addTab(browser, "Tab")
         self.tabs.setCurrentIndex(ix)
+        currentIndex=self.tabs.currentIndex()
+        currentWidget=self.tabs.currentWidget()
+        print(currentIndex)
+        self.tabs.setTabText(currentIndex, str(currentIndex))
          
     def tab_open_doubleclick(self, i):        
         if i == -1: 
@@ -352,7 +361,7 @@ class TabWidget(QMainWindow):
        
 #About messagebox.
     def about(self):
-        buttonReply = QMessageBox.question(self, "RunIT-QT Browser Copyright (c) 2015 JJ Posti <techtimejourney.net>", "RunIT-QT  comes with ABSOLUTELY NO WARRANTY;  This is free software, and you are welcome to redistribute it under  GPL Version 2, June 1991 This is the 0.7 beta1 QWebEngineView version(Nov 2020). ___________________________________________________________________________ \n \nRight-click menu:Save image/page/object functionality: Right-click upon an image/page/object and choose Copy image/page/object address. Next choose Save image/page/object and the Save as dialog should open. Notice. You do not need to write https:// in front of urls.", QMessageBox.Ok )
+        buttonReply = QMessageBox.question(self, "RunIT-QT Browser Copyright (c) 2015 JJ Posti <techtimejourney.net>", "RunIT-QT  comes with ABSOLUTELY NO WARRANTY;  This is free software, and you are welcome to redistribute it under  GPL Version 2, June 1991 This is the 0.7 RC1  QWebEngineView version(Aug 2021). ___________________________________________________________________________ \n \nRight-click menu:Save image/page/object functionality: Right-click upon an image/page/object and choose Copy image/page/object address. Next choose Save image/page/object and the Save as dialog should open. Notice. You do not need to write https:// in front of urls.", QMessageBox.Ok )
         if buttonReply == QMessageBox.Ok:
             pass       
           
