@@ -1,27 +1,27 @@
 # RunIT-QT_QWebengine
 RunIT Browser (QWebEngine version)
 
+Current version is: 0.7RC1 (7th of August 2021).
 
-<b>November 15th 2020:</b>
 
-RunIT Browser(PyQT5) has advanced to 0.7 beta1 version.
-
-![runit](https://user-images.githubusercontent.com/29865797/99185976-d0941080-2755-11eb-906a-7dcc022a0533.jpg)
+![browser](https://user-images.githubusercontent.com/29865797/128581188-7023303a-a561-40bd-b37c-a82f4eaf9d23.png)
 
 
 Notable improvements/changes:
+
+
 
 - Tabbed browsing: Double-click existing tab to get a new empty tab.
 - Right-click: Open link in a new tab functionality is now working.
 - More integrations to double-click menu. See about (i) for more information.
 - QWebEngine capability integrations continue: code becomes a bit cleaner and more functional.
 - UI is changed to become more clearer.
+- Tabs are numbered. 
+- Statusbar shows what was last loaded and on what tab.
 
 TODO in upcoming releases: 
 
 - Possibly integate label support as seen on previous releases.
-- Integrate url changing capabilities to other tabs than main. 
-  Currently urls do not change on other tabs when tab is changed away from the initial tab.
 - Enhance and integrate more QWebpage right-click functionalities.
 
 	
