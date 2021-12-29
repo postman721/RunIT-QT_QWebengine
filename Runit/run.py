@@ -1,4 +1,4 @@
-# importing required libraries 
+# importing required libraries
 from PyQt5 import QtCore, QtGui, QtWidgets 
 from PyQt5.QtCore import * 
 from PyQt5.QtWidgets import * 
@@ -7,7 +7,6 @@ from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import * 
 import os, sys, subprocess
 from subprocess import Popen  
-from icons import *
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -28,14 +27,14 @@ class TabWidget(QMainWindow):
         view = HtmlView(self)
         view.load(url)
 #Window settings
-        self.resize(800, 600)        
+        self.resize(800, 800)        
         self.setWindowTitle("RunIT Browser")
 #Tabwidget creation      
         self.tabs=QTabWidget()
         self.tabs.addTab(view, "Tab")                                   
 #Navigation bar        
         self.urlbar = QLineEdit()
-        self.urlbar.setStyleSheet("QLineEdit{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.urlbar.setStyleSheet("QLineEdit{color:#ffffff; padding:2px; margin:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QLineEdit:hover{background-color:#4d4a4a;}") 
         self.urlbar.setObjectName(_fromUtf8("lineEdit"))
         self.urlbar.setPlaceholderText("Type an address")
@@ -50,15 +49,10 @@ class TabWidget(QMainWindow):
                    
 #Back button before navbar adding.        
         self.back = QToolButton()
-        self.back.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
-        "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon = QIcon()
-        icon.addPixmap(QPixmap(_fromUtf8(":/icons/back.png")), QIcon.Normal, QIcon.Off)
-        self.back.setIcon(icon)
-        self.back.setObjectName(_fromUtf8("back"))
-        self.back.setToolTip('Go Back')
+        self.back.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QToolButton:hover{background-color:#5c5c5c;}")
+        self.back.setText('<-')
         self.back.clicked.connect(self.backs)
-        self.back.setFixedSize(24, 24)
         navtb.addWidget(self.back)
         
 #Navbar comes in.         
@@ -82,135 +76,102 @@ class TabWidget(QMainWindow):
 ############################
 #Forward.        
         self.forward = QToolButton()
-        self.forward.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.forward.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon1 = QIcon()
-        icon1.addPixmap(QPixmap(_fromUtf8(":/icons/forward.png")), QIcon.Normal, QIcon.Off)
-        self.forward.setIcon(icon1)
-        self.forward.setObjectName(_fromUtf8("forward"))
-        self.forward.setToolTip('Go Forward')
+        self.forward.setText('->')
         self.forward.clicked.connect(self.forwards)
-        self.forward.setFixedSize(24, 24)
         navtb.addWidget(self.forward)
 
 #Reload.        
         self.reloading = QToolButton()
-        self.reloading.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.reloading.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon3 = QIcon()
-        icon3.addPixmap(QPixmap(_fromUtf8(":/icons/reload.png")), QIcon.Normal, QIcon.Off)
-        self.reloading.setIcon(icon3)
-        self.reloading.setObjectName(_fromUtf8("reload"))
+        self.reloading.setText("Reload")
         self.reloading.setToolTip('Reload Page')
         self.reloading.clicked.connect(self.reloads)
-        self.reloading.setFixedSize(24, 24)
         navtb.addWidget(self.reloading)
 
 #Home.        
         self.home = QToolButton()
-        self.home.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.home.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon2 = QIcon()
-        icon2.addPixmap(QPixmap(_fromUtf8(":/icons/home.png")), QIcon.Normal, QIcon.Off)
-        self.home.setIcon(icon2)
-        self.home.setObjectName(_fromUtf8("home"))
+        self.home.setText('Home')
         self.home.setToolTip('Go Home')
         self.home.clicked.connect(self.homes)
-        self.home.setFixedSize(24, 24)
         navtb.addWidget(self.home)
 
 #Zoom -.        
         self.zoom_out = QToolButton()
-        self.zoom_out.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.zoom_out.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
         self.zoom_out.setToolTip('Zoom -')
         self.zoom_out.clicked.connect(self.zoomouts)
-        icon10 = QIcon()
-        icon10.addPixmap(QPixmap(_fromUtf8(":/icons/zoom-out.png")), QIcon.Normal, QIcon.Off)
-        self.zoom_out.setIcon(icon10)
-        self.zoom_out.setObjectName(_fromUtf8("zoom_out"))
+        self.zoom_out.setText('Zoom -')      
         self.zoom_out.setToolTip('Zoom -')
-        self.zoom_out.setFixedSize(24, 24)
         navtb.addWidget(self.zoom_out)
                
 #Zoom +.       
         self.zoom_in = QToolButton()
-        self.zoom_in.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.zoom_in.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}")
-        icon9 = QIcon()
-        icon9.addPixmap(QPixmap(_fromUtf8(":/icons/zoom-in.png")), QIcon.Normal, QIcon.Off)
-        self.zoom_in.setIcon(icon9)
-        self.zoom_in.setObjectName(_fromUtf8("zoom_in")) 
+        self.zoom_in.setText('Zoom +')
         self.zoom_in.setToolTip('Zoom +')
         self.zoom_in.clicked.connect(self.zoomins)
-        self.zoom_in.setFixedSize(24, 24)
         navtb.addWidget(self.zoom_in)
 
 #Printing.        
         self.printing = QToolButton()
-        self.printing.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.printing.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; padding:2px; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon8 = QIcon()
-        icon8.addPixmap(QPixmap(_fromUtf8(":/icons/print.png")), QIcon.Normal, QIcon.Off)
-        self.printing.setIcon(icon8)
-        self.printing.setObjectName(_fromUtf8("print"))
+        self.printing.setText('Print')
         self.printing.setToolTip('Print')
         self.printing.clicked.connect(self.handlePreview)
-        self.printing.setFixedSize(24, 24)
         navtb.addWidget(self.printing)  
 
 #Search Switch.        
         self.switch_2 = QLineEdit()
-        self.switch_2.setStyleSheet("QLineEdit{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.switch_2.setStyleSheet("QLineEdit{color:#ffffff; background-color:#353535; padding:2px; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QLineEdit:hover{background-color:#5c5c5c;}") 
         self.switch_2.setObjectName(_fromUtf8("switch_2"))
         self.switch_2.setPlaceholderText("Switch")
-        self.switch_2.setFixedSize(50, 24)
         self.switch_2.setToolTip('gs=Startpage, wiki = Wikipedia,  tube = Youtube,  wolf = Wolfram Alpha. Empty = Startpage search (default)')
         self.switch_2.returnPressed.connect(self.extra)
+        self.switch_2.setFixedSize(62,24)
+
         navtb.addWidget(self.switch_2)
 #Search.        
         self.Search = QLineEdit()
-        self.Search.setStyleSheet("QLineEdit{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.Search.setStyleSheet("QLineEdit{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QLineEdit:hover{background-color:#5c5c5c;}") 
         self.Search.setObjectName(_fromUtf8("Search"))
         self.Search.setPlaceholderText("Search something")
         self.Search.setToolTip('Search')
+        self.Search.setFixedSize(192,24)
         self.Search.returnPressed.connect(self.extra)
         navtb.addWidget(self.Search)
 #Bookmark.        
         self.bookmark = QToolButton()
-        self.bookmark.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
-        "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon5 = QIcon()
-        icon5.addPixmap(QPixmap(_fromUtf8(":/icons/bookmark.png")), QIcon.Normal, QIcon.Off)
-        self.bookmark.setIcon(icon5)
-        self.bookmark.setObjectName(_fromUtf8("bookmark"))
+        self.bookmark.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QToolButton:hover{background-color:#5c5c5c;}")
         self.bookmark.setToolTip('Bookmark addressbar location')
+        self.bookmark.setText('Bookmark')
         self.bookmark.clicked.connect(self.bookmarks)
-        self.bookmark.setFixedSize(24, 24)
         navtb.addWidget(self.bookmark)
 #Open Bookmarks.        
         self.see_bookmark = QToolButton()
-        self.see_bookmark.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.see_bookmark.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
-        icon6 = QIcon()
-        icon6.addPixmap(QPixmap(_fromUtf8(":/icons/seebook.png")), QIcon.Normal, QIcon.Off)
-        self.see_bookmark.setIcon(icon6)
-        self.see_bookmark.setObjectName(_fromUtf8("see_bookmark"))
+        self.see_bookmark.setText('See Bookmarks')
         self.see_bookmark.setToolTip('See Bookmarks')
         self.see_bookmark.clicked.connect(self.bookopen)
-        self.see_bookmark.setFixedSize(24, 24)
         navtb.addWidget(self.see_bookmark)
 #About        
         self.about1 = QToolButton()
-        self.about1.setStyleSheet("QToolButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        self.about1.setStyleSheet("QToolButton{color:#ffffff; padding:2px; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
         "QToolButton:hover{background-color:#5c5c5c;}") 
         self.about1.setText("i")        
-        self.about1.setObjectName(_fromUtf8("about"))
         self.about1.setToolTip('About')
         self.about1.clicked.connect(self.about)
-        self.about1.setFixedSize(24, 24)
         navtb.addWidget(self.about1)    
 #Browser settings
         self.tabs.currentWidget().page().settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
@@ -362,7 +323,7 @@ class TabWidget(QMainWindow):
        
 #About messagebox.
     def about(self):
-        buttonReply = QMessageBox.question(self, "RunIT-QT Browser Copyright (c) 2015 JJ Posti <techtimejourney.net>", "RunIT-QT  comes with ABSOLUTELY NO WARRANTY;  This is free software, and you are welcome to redistribute it under  GPL Version 2, June 1991 This is the 0.7 RC1  QWebEngineView version(Aug 2021). ___________________________________________________________________________ \n \nRight-click menu:Save image/page/object functionality: Right-click upon an image/page/object and choose Copy image/page/object address. Next choose Save image/page/object and the Save as dialog should open. Notice. You do not need to write https:// in front of urls.", QMessageBox.Ok )
+        buttonReply = QMessageBox.question(self, "RunIT-QT Browser Copyright (c) 2015 JJ Posti <techtimejourney.net>", "RunIT-QT  comes with ABSOLUTELY NO WARRANTY;  This is free software, and you are welcome to redistribute it under  GPL Version 2, June 1991 This is the 0.7 RC2  QWebEngineView version(Sep 2021). ___________________________________________________________________________ \n \nRight-click menu:Save image/page/object functionality: Right-click upon an image/page/object and choose Copy image/page/object address. Next choose Save image/page/object and the Save as dialog should open. Notice. You do not need to write https:// in front of urls.", QMessageBox.Ok )
         if buttonReply == QMessageBox.Ok:
             pass       
           
