@@ -33,6 +33,10 @@ Something like below, should be enough.
 python-pyqt5.qtwebengine python-pyqt5 ca-certificates
 
 
+OR
+
+python3-pyqt5.qtwebengine python3-pyqt5 ca-certificates
+
 
 
 Remember to make the files executable with chmod +x some_file
