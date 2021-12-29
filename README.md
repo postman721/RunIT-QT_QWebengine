@@ -1,7 +1,8 @@
 # RunIT-QT_QWebengine
 RunIT Browser (QWebEngine version)
 
-Current version is: 0.7RC1 (7th of August 2021).
+Current version is: 0.7 RC2 
+Deprecating icons and increasing python3 compatibility.
 
 
 ![browser](https://user-images.githubusercontent.com/29865797/128581188-7023303a-a561-40bd-b37c-a82f4eaf9d23.png)
