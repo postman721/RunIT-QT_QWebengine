@@ -269,7 +269,7 @@ class TabWidget(QMainWindow):
 #####Bookmark functions.    
     def bookmarks(self,widget):
         home=os.getenv("HOME")
-        print home
+        print (home)
         site=str(self.urlbar.text())
         os.chdir(home) 
         f = open('.bookmarks.html', 'a')
@@ -278,8 +278,8 @@ class TabWidget(QMainWindow):
 
 #Open bookmarks file.
     def bookopen(self,widget):
-    	home=os.getenv("HOME")
-        print home
+        home=os.getenv("HOME")
+        print(home)
         home=os.getenv("HOME")
         os.chdir(home)
         head="file:///"
@@ -331,33 +331,33 @@ class TabWidget(QMainWindow):
 #Wolfram Alpha search.
             adds1="https://www.wolframalpha.com/input/?i=" + search 
             self.tabs.currentWidget().load(QUrl(self.home))
-            print adds1
+            print(adds1)
         
         elif text == ('wiki'):
 
 #Wikipedia search (english).        
             adds1="https://en.wikipedia.org/w/index.php?title=Special:Search&profile=default&fulltext=Search&search=" + search 
             self.tabs.currentWidget().load(QUrl(adds1))
-            print adds1
+            print (adds1)
 
         elif text == ('tube'):
 
 #Youtube search (english).        
             adds1="https://www.youtube.com/results?search_query=" + search 
             self.tabs.currentWidget().load(QUrl(adds1))
-            print adds1
+            print (adds1)
 
         elif text == ('gs'):
 
 #Startpage search (english).        
             adds1="https://startpage.com/do/search?query=" + search 
             self.tabs.currentWidget().load(QUrl(adds1))
-            print adds1
+            print (adds1)
 
         else:
             adds1="https://startpage.com/do/search?query=" + search 
             self.tabs.currentWidget().load(QUrl(adds1))
-            print adds1
+            print (adds1)
        
 #About messagebox.
     def about(self):
@@ -380,7 +380,7 @@ class NewPage(QWebEnginePage):
         if action == QWebEnginePage.SavePage:
             clipboard = QApplication.clipboard()
             http_location=str(clipboard.text())
-            print "Page location:" + http_location 
+            print ("Page location:" + http_location) 
             options = QFileDialog.Options()
             options |= QFileDialog.DontUseNativeDialog
             fileName, _ = QFileDialog.getSaveFileName(None,"Save as","","All Files (*)", options=options)
@@ -390,7 +390,7 @@ class NewPage(QWebEnginePage):
         elif action == QWebEnginePage.DownloadMediaToDisk:
             clipboard = QApplication.clipboard()
             http_location=str(clipboard.text())
-            print "Content location:" + http_location 
+            print ("Content location:" + http_location) 
             options = QFileDialog.Options()
             options |= QFileDialog.DontUseNativeDialog
             fileName, _ = QFileDialog.getSaveFileName(None,"Save as","","All Files (*)", options=options)
@@ -400,7 +400,7 @@ class NewPage(QWebEnginePage):
         elif action == QWebEnginePage.DownloadImageToDisk:
             clipboard = QApplication.clipboard()
             http_location=str(clipboard.text())
-            print "Image location:" + http_location 
+            print ("Image location:" + http_location) 
             options = QFileDialog.Options()
             options |= QFileDialog.DontUseNativeDialog
             fileName, _ = QFileDialog.getSaveFileName(None,"Save as","","All Files (*)", options=options)
