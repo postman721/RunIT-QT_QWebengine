@@ -1,6 +1,9 @@
 # RunIT-QT_QWebengine
 RunIT Browser (QWebEngine version)
 
+
+### RunIT-QT  comes with ABSOLUTELY NO WARRANTY;  This is free software, and you are welcome to redistribute it under  GPL Version 2, June 1991 This is the 1.0 RC1 (February 2024).
+
  
 ### Features
  
