@@ -1,0 +1,124 @@
+/* Main window background */
+QMainWindow {
+    background-color: #ffffff; /*  a white background */
+}
+
+/* Toolbar styling */
+QToolBar {
+    background-color: #f1f3f4; /* toolbar is a light gray */
+    border-bottom: 1px solid #e0e0e0; /* Slightly darker border for separation */
+}
+
+/* Enhanced styling for the address bar */
+QLineEdit {
+    background-color: #ffffff; /* White background for the address bar */
+    color: #5f6368; /* text color for inputs */
+    border: 1px solid #dfe1e5; /* border color */
+    padding: 2px;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 14px;
+}
+
+/* Focus state for the address bar */
+QLineEdit:focus {
+    border: 2px solid #4285f4; /* focus color is a bright blue */
+}
+
+/* Buttons, labels, and tabs */
+QPushButton, QLabel {
+    background-color: #f8f9fa; /* Light gray background. */
+    color: #3c4043; /* Slightly dark gray text for readability */
+    border-radius: 4px; /* Consistent rounded corners */
+}
+
+/* Tabs styling */
+QTabBar::tab {
+    background-color: #f1f3f4; /* Light gray for tabs. */
+    color: #5f6368; /* Gray text for tabs */
+    border: 1px solid #e0e0e0; /* Border color for definition */
+    border-bottom: none; /* No bottom border to blend with the content area */
+    border-radius: 4px 4px 0 0; /* Rounded corners on the top */
+    padding: 5px;
+    margin-top: 2px; /* Slight margin from the toolbar */
+}
+
+/* Hover effects for buttons and tabs */
+QPushButton:hover, QTabBar::tab:hover {
+    background-color: #e8eaed; /* Slightly darker on hover. */
+}
+
+/* Pressed and selected states for buttons and tabs */
+QPushButton:pressed, QTabBar::tab:selected {
+    background-color: #d2e3fc; /* Light blue for selected or pressed state. */
+}
+
+/* Tab widget pane styling */
+QTabWidget::pane {
+    border: 1px solid #e0e0e0; /* Light gray border around the content pane */
+}
+
+/* Styling for the close button on tabs */
+#closeButton {
+    background-color: transparent;
+    border: none;
+    image: url(':/icons/close.png');
+    width: 16px;
+    height: 16px;
+}
+
+/* Additional styling for better visual separation and alignment */
+QStatusBar {
+    background-color: #f1f3f4; /* Light gray, matching the toolbar */
+    color: #202124; /* Dark text for contrast */
+    border-top: 1px solid #e0e0e0; /* Light border for separation */
+}
+
+/* Context menu styling */
+QMenu {
+    background-color: #ffffff; /* White background for the menu */
+    color: #202124; /* Dark text for items */
+    border: 1px solid #dfe1e5; /* Light gray border */
+}
+
+QMenu::item {
+    background-color: transparent;
+    padding: 5px 20px;
+}
+
+QMenu::item:selected {
+    background-color: #e8f0fe; /* Light blue background for selected items. */
+    color: #202124;
+}
+
+/* Disabled menu items */
+QMenu::item:disabled {
+    color: #a0a0a0; /* Light gray text */
+}
+
+/* Separator style */
+QMenu::separator {
+    height: 1px;
+    background: #e0e0e0; /* Separator color */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Progress bar */
+QProgressBar {
+    border: 1px solid #dfe1e5; /* Light gray border around the progress bar */
+    border-radius: 2px; /* Slightly rounded corners */
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+QProgressBar::chunk {
+    background-color: #4285f4; /* blue for the progress fill */
+}
+
+/* Labels */
+QLabel {
+    color: #202124; /* Dark gray text, ensuring good readability against the white background */
+}
+
+/* Dialogs and MessageBox styling to match */
+QDialog, QMessageBox {
+    background-color: #ffffff; /* Consistent white background */
