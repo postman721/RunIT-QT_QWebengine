@@ -1,70 +1,76 @@
 # RunIT-QT_QWebengine
 RunIT Browser (QWebEngine version)
 
-0.7 (July 2022) notable improvements/changes:
+ 
+### Features
+ 
+    Tabbed Browsing:
+        Users can open multiple web pages in separate tabs. 
+        Easy navigation between different tabs.
+        Open new tabs either by double clicking an existing one or via right-click menu.
 
-![new](https://user-images.githubusercontent.com/29865797/179807565-f323399c-5a49-4e30-8c21-c633abd6b64d.jpg)
+    Navigation Controls:
+        Back and Forward buttons to navigate through the web history.
+        Refresh button to reload the current web page.
+        Home button to quickly return to the home page (default set to Google).
 
-- Youtube and Netflix confirmed working on almost complete full screen mode.
+    Bookmarking System:
+        Ability to bookmark favorite web pages.
+        Bookmarks are saved locally for later access.
+        Option to view all bookmarked pages.
+        Bookmarks are located at .bookmarks.html, which is inside user's home directory.
+        
+    Full screen Youtube etc.
+        Full screen mode is now working on Youtube etc.        
 
-- Homepage is now pointing to StartPage search engine.
+    Context Menu:
+        Right-click context menu with various options.
+        Option to open links in a new tab.
+        Ability to download hyperlinks and files via dedicated right-click dialog program (Download).
+        Context menu has, for example: bookmarking, showing the bookmarks, dowload(the object under cursor), zoom in, zoom out and tab controls.
 
-- Window is resized to be larger and more useful from the beginning.
+    Address Bar:
+        Enter URLs to navigate to specific web pages.
+        Input search queries that default to Google search when not a URL.
+        Automatic redirection to HTTPS to enhance security.
 
-- Addressbar improvements: google.com AND www.google.com AND https://google.com will resolve. -> https is auto appended into the front.
+    Download Functionality:
+        Context menu option to download resources from web pages (Download).
 
-- More verbosity added to statusbar(notices go back, go forward etc. functions on tabs).
+    User Interface:
+        Modern and clean user interface.
+        Responsive design that adjusts to window resizing.
 
-- UI is styled to be darker than before.
+    Status Bar:
+        Displays status messages (e.g., when a bookmark is added).
 
-- Tabs now have titles in them.
+    Close Tab Option:
+        Each tab comes with a close button ('X') for easy closure.
+        Ability to close tabs without navigating to them.
 
-- Back, forward etc. Now upgrade urlbar address like they should.
+    URL Validation:
+        Basic validation to check if the entered text is a URL or a search query.
+        Checks for secure HTTP (HTTPS) URLs.
 
-- Ecosia replaces Wolfram Alpha on search engines.
+    Customization and Extensibility:
+        The browser can be easily customized and extended with more features.
+        The style can be modified using the style.qss file.
 
+    Error Handling:
+        Basic error handling for network issues or invalid URLs.
 
+###### <b>Notice. Download downloads whatever is under the mouse cursor when context menu is opened and the download option is chosen. Remember the choose the download location.</b>
 
-#### OLD VERSION CHANGELOGS
+### Running the Application
 
-From 0.7 RC2 
-Deprecating icons and increasing python3 compatibility.
-
-
-![browser](https://user-images.githubusercontent.com/29865797/128581188-7023303a-a561-40bd-b37c-a82f4eaf9d23.png)
-
-
-- Tabbed browsing: Double-click existing tab to get a new empty tab.
-- Right-click: Open link in a new tab functionality is now working.
-- More integrations to double-click menu. See about (i) for more information.
-- QWebEngine capability integrations continue: code becomes a bit cleaner and more functional.
-- UI is changed to become more clearer.
-- Tabs are numbered. 
-- Statusbar shows what was last loaded and on what tab.
-
-TODO in upcoming releases: 
-
-- Possibly integate label support as seen on previous releases.
-- Enhance and integrate more QWebpage right-click functionalities.
-
-	
-
-Dependencies:
-
-Something like below, should be enough.
-
-python-pyqt5.qtwebengine python-pyqt5 ca-certificates
-
-
-OR
-
-python3-pyqt5.qtwebengine python3-pyqt5 ca-certificates
-
-
-
-Remember to make the files executable with chmod +x some_file
-
-Run the browser: python run.py 
+    Dependencies (Debian base as a model)
+        python3-pyqt5.qtwebengine python3-pyqt5 ca-certificates wget
+    
+        Optional but very much recommended: adwaita-icon-theme (for icons)
+    
+    Running the app:
+        Clone or download the source code.
+        Run the the program: python3 main.py 
 
 
 _______________________________________
