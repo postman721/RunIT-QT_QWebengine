@@ -2,7 +2,7 @@
 # Default download directory: ~/Downloads
 # Automatic filename sanitization and extension appending from MIME type.
 #
-# Copyright (c) 2015 JJ PostI
+# Copyright (c) 2015 JJ Posti
 # GPL v2 (June 1991).
 
 import os
